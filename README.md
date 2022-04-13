@@ -11,4 +11,4 @@ go run ./cmd/.
 
 ## How to call the api
 
-We have one [swagger file](./docs/swagger.yml), here you can see all the requests, request and response bodies
+We have one [swagger doc](https://skyaxl.github.io/flightpath/), here you can see all the requests, request and response bodies
