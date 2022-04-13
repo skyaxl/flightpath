@@ -1,0 +1,41 @@
+openapi: "3.0.3"
+info:
+  title: Flight path calculator
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /calculate:
+    post:
+      operationId: calculate
+      summary: Calculate the first and the last airport
+      requestBody:
+       description: List of flights
+       content:
+        application/json:
+          examples:
+            ok:
+              value: [['FLN', 'GRU'],['GRU', 'NYC']]
+          schema:
+            type: array
+            items:
+              type: array
+              items:
+                type: string
+      responses:
+        '200':
+          description: |-
+            200 response
+          content:
+            application/json:
+              examples: 
+                ok: 
+                  value: ['FLN', 'GRU']
+        '400':
+          description: |-
+            Bad request - bad json format or missing flight  
+          content:
+            application/json:
+              examples: 
+                ok: 
+                  value: {"message": "Invalid flight 0 [FLN]"}
